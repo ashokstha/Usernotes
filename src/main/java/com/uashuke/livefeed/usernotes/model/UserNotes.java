@@ -4,9 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -14,6 +12,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "user_notes")
 public class UserNotes {
+    private static final long serailVersionUID = 1L;
+    @Id
+    @GeneratedValue
+    private int id;
     @Column(name = "user_name")
     private String username;
     private String message;

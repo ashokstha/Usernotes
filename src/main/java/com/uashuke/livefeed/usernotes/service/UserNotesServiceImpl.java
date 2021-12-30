@@ -2,8 +2,11 @@ package com.uashuke.livefeed.usernotes.service;
 
 import com.uashuke.livefeed.usernotes.dao.UserNotesDao;
 import com.uashuke.livefeed.usernotes.model.ApiRequest;
+import com.uashuke.livefeed.usernotes.model.UserNotes;
+import com.uashuke.livefeed.usernotes.repository.UserNotesRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +15,9 @@ import java.util.Map;
 @Service
 public class UserNotesServiceImpl implements UserNotesService{
     private static Logger logger = LoggerFactory.getLogger(UserNotesServiceImpl.class);
+
+    @Autowired
+    UserNotesRepository userNotesRepository;
 
     @Override
     public List<UserNotesDao> getAllNotes() {
